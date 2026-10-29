@@ -1,0 +1,29 @@
+01_实验一_环境配置/
+├── .vscode/
+│   ├── launch.json                 VS Code 中配置 QEMU/GDB 启动与连接方式
+│   └── settings.json               配置本工程的编辑器行为
+├── src/
+│   ├── CMakeLists.txt              定义 miniEuler 的交叉编译与链接规则
+│   ├── aarch64-qemu.ld             指定裸机程序入口及各内存段的布局
+│   ├── bsp/
+│   │   ├── CMakeLists.txt          将 BSP 启动汇编加入构建
+│   │   ├── prt_reset_vector.S       设置启动后的执行入口并调用 main
+│   │   └── start.S                  检查异常级别、设置栈并转入复位入口
+│   ├── include/
+│   │   └── prt_typedef.h            定义工程通用的基本数据类型
+│   └── main.c                       裸机示例程序，直接通过串口输出文本
+├── 实验截图/                         保存实验过程与运行结果截图
+├── 作业/
+│   ├── build_py分析提纲.md
+│   └── uniproton/
+│       ├── build.py                 解析构建参数并驱动 UniProton 构建流程
+│       └── config.xml               保存 UniProton 各目标平台的构建配置
+├── gen_fig1.py                      生成实验报告使用的启动流程示意图
+├── gen_fig2.py                      生成实验报告使用的构建运行示意图
+├── makeMiniEuler.sh                 配置并编译 miniEuler 工程
+├── runMiniEuler.sh                  在 QEMU virt 上运行 miniEuler
+├── 官方网页原文.rst
+├── 实验一：环境配置.docx
+├── 网页代码段_完整.txt
+├── 网页命令索引.md
+└── 验收讲解稿.md
